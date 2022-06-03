@@ -1,0 +1,11 @@
+#alpine es una distribución linux para contenedores
+FROM node:14-alpine
+#cuando se corra la imagen se deberá ingresar el volumen `-v` a /app
+USER node
+WORKDIR /app 
+RUN ["npm", "i", "-g", "create-nuxt-app"]
+#ENV APP_NAME="my-app"
+# ${variable:-word}  "echo $HOME" 
+#CMD [ "npm", "init", "nuxt-app", "."] 
+ENTRYPOINT [ "npm", "init", "nuxt-app"]  
+#la idea es que se ejecute nombre-docker <nombre-app>

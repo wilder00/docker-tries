@@ -1,0 +1,8 @@
+FROM node:14-alpine
+ENV PORT=3000
+EXPOSE $PORT
+RUN echo "el puerto es: ${PORT}:"$PORT
+WORKDIR /app
+RUN ["npm", "install"]
+CMD [ "npm", "run", "dev" ]
+
